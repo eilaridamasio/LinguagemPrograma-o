@@ -7,11 +7,26 @@ Qualquer dúvida consulte :::http://www.w3.org/community/webed/wiki/CSS/Properti
 /* Normatização CSS */
 
 body{
-	font-family: Roboto,sans-serif;
+	font-family: 'Roboto', sans-serif;
 	color: #444;
 	line-height: 1.5; /*altura da linha */
 	font-size: 100%; /*tamanho da fonte*/
 }
+
+*,*:after,*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*
+Todo 'a' vem por default sublinhado, para mudar isso deve-se usar as seguintes propriedades:
+text-decoration: none ==> retira o sublinhado;
+text-decoration: underline ==> coloca um sublinhado;
+text-decoration: overline ==> coloca um sobrelinhado;
+text-decoration: underline overline ==> coloca sobre e sublinhado juntos;
+text-decoration: line-through ==> coloca uma linha em cima do texto.
+*/
 
 a{
 	text-decoration: none;
@@ -19,9 +34,17 @@ a{
 	color: #00CCFF;
 }
 
-a: hover{
+a:hover{
 	text-decoration: underline;
 }
+
+/*
+Como estilizar o comportamento do mouse
+a:link estiliza o estado UP (corresponde a situação inicial do link, isto é, o aspecto do link quando a página é carregada no browser do usuário);
+a:visited estiliza o estado VISITED (é o aspecto que o link assume quando o usuário passa o ponteiro do mouse sobre o link);
+a:hover estiliza o estado OVER (é o aspecto do link depois que foi visitado pelo usuário);
+a:active estiliza o estado link ativo (é o aspecto do link ativo, isto é, aquele que foi clicado pelo usuário.);
+*/
 
 .container{
 	max-width: 1128px;
@@ -54,10 +77,10 @@ nav ul{
 }
 
 nav li{
-	display: inline-block;
 	font-size: 12px;
-	margin-top: 10px;
 	margin-left: 20px;
+	margin-top: 10px;
+	display: inline-block;
 }
 
 nav li a{
@@ -65,7 +88,7 @@ nav li a{
 }
 
 .banner{
-	background: url(../img/banner.jpg);
+	background: url('../img/banner.jpg');
 	height: 450px;
 	margin-bottom: 48px;
 	position: relative;
@@ -77,17 +100,13 @@ nav li a{
 	background: rgba(0, 0, 0, 0.6);
 	width: 480px;
 	padding: 24px 14px 24px 40px;
+	display: center;
 }
 
-h1{
-	font-size: 18px;
-	color: #FFF;
-}
 
 .caixa p{
 	font-size: 18px;
 	color: #fff;
-	text-align: justify;
 }
 
 h1{
@@ -98,24 +117,24 @@ h1{
 	margin-bottom: 0;
 }
 
-.destaque{
-	font-size: 18px;
-	color: #fff;
-	font-weight: 200;
-}
 
-.article{
+article{
 	width: 264px;
 	float: left;
 	margin-right: 24px;
 }
 
-.article:last child{
+article:last-child{
 	margin-right: 0;
 }
 
 h2{
-	font-size: 24px
+	font-size: 24px;
+}
+
+p{
+	text-align: justify;
+	font-size: 16px;
 }
 
 footer{
@@ -128,25 +147,6 @@ footer{
 	font-size: 10px;
 	margin-bottom: 0;
 }
-
-/*
-Todo 'a' vem por default sublinhado, para mudar isso deve-se usar as seguintes propriedades:
-text-decoration: none ==> retira o sublinhado;
-text-decoration: underline ==> coloca um sublinhado;
-text-decoration: overline ==> coloca um sobrelinhado;
-text-decoration: underline overline ==> coloca sobre e sublinhado juntos;
-text-decoration: line-through ==> coloca uma linha em cima do texto.
-*/
-
-
-/*
-Como estilizar o comportamento do mouse
-a:link estiliza o estado UP (corresponde a situação inicial do link, isto é, o aspecto do link quando a página é carregada no browser do usuário);
-a:visited estiliza o estado VISITED (é o aspecto que o link assume quando o usuário passa o ponteiro do mouse sobre o link);
-a:hover estiliza o estado OVER (é o aspecto do link depois que foi visitado pelo usuário);
-a:active estiliza o estado link ativo (é o aspecto do link ativo, isto é, aquele que foi clicado pelo usuário.);
-*/
-
 
 
 /* 
